@@ -1,6 +1,7 @@
 #include "myl.h"
+#include <math.h>
 #define BUFF 100
-#define FLOAT_PREC 1e6
+#define FLOAT_PREC 6
 
 int printStr(char *str)
 {
@@ -19,21 +20,22 @@ int printStr(char *str)
 }
 
 int printInt(int n)
-{
+{   
+    long int num = n;
     char buff[BUFF], zero = '0';
     int len = 0;
-    if(n == 0) buff[len++] = zero;
+    if(num == 0) buff[len++] = zero;
     else
     {
-        if(n < 0)
+        if(num < 0)
         {
             buff[len++] = '-';
-            n = -n;
+            num = -num;
         }
-        while(n > 0)
+        while(num > 0)
         {
-            buff[len++] = n % 10 + '0';
-            n /= 10;
+            buff[len++] = num % 10 + '0';
+            num /= 10;
         }
         int j = 0, k = len - 1;
         if(buff[0] == '-') j = 1;
@@ -64,8 +66,14 @@ int printFlt(float f)
     int len = printInt(n);
     if(len == ERR) return ERR;
     len += printStr(".");
-    f = f - n;
-    n = (int)(f * FLOAT_PREC);
-    len += printInt(n);
+    n = (int)(f * powl(10, FLOAT_PREC));
+    char decimal[FLOAT_PREC];
+    for(int i=0; i<FLOAT_PREC; i++)
+    {   
+        decimal[FLOAT_PREC - i - 1] = '0' + n%10;
+        n /= 10;
+    }
+    len += FLOAT_PREC;
+    printStr(decimal);
     return len;
 }
