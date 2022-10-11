@@ -58,7 +58,7 @@ int main(){
     int input;
     int retVal = OK;
     printStr("\n\n############# Testing: readInt #############\n");
-    printStr("Test Case0: Enter any negative interger(for example:123)\n");
+    printStr("Test Case0: Enter any positive interger(for example:123)\n");
     retVal = readInt(&input);
     if(retVal == ERR) printStr("Error: Invalid Input\n\n");
     else{
@@ -205,11 +205,5 @@ int main(){
         printFlt(in);
         printStr("\n\n");
     }
-
-    
-
-
-
-
 }
 

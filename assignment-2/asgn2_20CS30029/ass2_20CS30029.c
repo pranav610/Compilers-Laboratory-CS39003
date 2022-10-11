@@ -1,5 +1,4 @@
 #include "myl.h"
-#include <math.h>
 #define BUFF 100                                    // buffer size for reading from STDIN
 #define FLOAT_PREC 6                                // precision for floating point numbers
 
@@ -141,7 +140,9 @@ int printFlt(float f)
     len += printStr(".");
 
     // calculation of 6 decimal places
-    n = (long long)(f * powl(10, FLOAT_PREC));
+    long long exp = 1;
+    for(int i=0; i<FLOAT_PREC; i++) exp*=10;
+    n = (long long)(f * exp);
     char decimal[FLOAT_PREC];
     for(int i=0; i<FLOAT_PREC; i++)
     {   
