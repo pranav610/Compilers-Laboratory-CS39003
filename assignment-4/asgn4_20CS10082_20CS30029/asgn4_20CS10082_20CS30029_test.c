@@ -1,24 +1,16 @@
-/* Test C Program to check all parser rules*/
-
+/* Test C Program to check all parser rules */
 
 auto x = 3;
-typedef const unsigned int cui;
+const unsigned int cui = 4;
 short bit = 1;
-typedef const signed int csi;
-inline int addOne (int x) {return x++;};
+const signed int csi = -4;
+inline int addOne(int x){return x++;}
 enum directions {NORTH = 1, SOUTH, EAST, WEST};
 extern int globl;
 static const double e = 2.71828182845904523536;
 
-_Complex a = 1 + 2.0i;
+_Complex a = 1;
 _Bool check = 0;
-
-union ass3_20CS30029_test_union
-{
-    /* data */
-    int marks;
-    char comments;
-};
 
 static int staticVar = 1;
 
