@@ -1,5 +1,5 @@
 ass3_20CS10082_20CS30029_output.txt: a.out ass3_20CS10082_20CS30029_test.c
-	./a.out ass3_20CS10082_20CS30029_test.c ass3_20CS10082_20CS30029_output.txt
+	./a.out < ass3_20CS10082_20CS30029_test.c > ass3_20CS10082_20CS30029_output.txt
 
 a.out: ass3_20CS10082_20CS30029.o lex.yy.o
 	gcc ass3_20CS10082_20CS30029.o lex.yy.o -lfl
