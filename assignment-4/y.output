@@ -1,0 +1,247 @@
+Grammar
+
+    0 $accept: statement $end
+
+    1 statement: expression
+
+    2 expression: expression '+' term
+    3           | expression '-' term
+    4           | term
+
+    5 term: term '*' factor
+    6     | term '/' factor
+    7     | factor
+
+    8 factor: '(' expression ')'
+    9       | '-' factor
+   10       | NUMBER
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '(' (40) 8
+    ')' (41) 8
+    '*' (42) 5
+    '+' (43) 2
+    '-' (45) 3 9
+    '/' (47) 6
+    error (256)
+    NUMBER (258) 10
+
+
+Nonterminals, with rules where they appear
+
+    $accept (10)
+        on left: 0
+    statement (11)
+        on left: 1
+        on right: 0
+    expression (12)
+        on left: 2 3 4
+        on right: 1 2 3 8
+    term (13)
+        on left: 5 6 7
+        on right: 2 3 4 5 6
+    factor (14)
+        on left: 8 9 10
+        on right: 5 6 7 9
+
+
+State 0
+
+    0 $accept: . statement $end
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    statement   go to state 4
+    expression  go to state 5
+    term        go to state 6
+    factor      go to state 7
+
+
+State 1
+
+   10 factor: NUMBER .
+
+    $default  reduce using rule 10 (factor)
+
+
+State 2
+
+    9 factor: '-' . factor
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    factor  go to state 8
+
+
+State 3
+
+    8 factor: '(' . expression ')'
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    expression  go to state 9
+    term        go to state 6
+    factor      go to state 7
+
+
+State 4
+
+    0 $accept: statement . $end
+
+    $end  shift, and go to state 10
+
+
+State 5
+
+    1 statement: expression .
+    2 expression: expression . '+' term
+    3           | expression . '-' term
+
+    '+'  shift, and go to state 11
+    '-'  shift, and go to state 12
+
+    $default  reduce using rule 1 (statement)
+
+
+State 6
+
+    4 expression: term .
+    5 term: term . '*' factor
+    6     | term . '/' factor
+
+    '*'  shift, and go to state 13
+    '/'  shift, and go to state 14
+
+    $default  reduce using rule 4 (expression)
+
+
+State 7
+
+    7 term: factor .
+
+    $default  reduce using rule 7 (term)
+
+
+State 8
+
+    9 factor: '-' factor .
+
+    $default  reduce using rule 9 (factor)
+
+
+State 9
+
+    2 expression: expression . '+' term
+    3           | expression . '-' term
+    8 factor: '(' expression . ')'
+
+    '+'  shift, and go to state 11
+    '-'  shift, and go to state 12
+    ')'  shift, and go to state 15
+
+
+State 10
+
+    0 $accept: statement $end .
+
+    $default  accept
+
+
+State 11
+
+    2 expression: expression '+' . term
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    term    go to state 16
+    factor  go to state 7
+
+
+State 12
+
+    3 expression: expression '-' . term
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    term    go to state 17
+    factor  go to state 7
+
+
+State 13
+
+    5 term: term '*' . factor
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    factor  go to state 18
+
+
+State 14
+
+    6 term: term '/' . factor
+
+    NUMBER  shift, and go to state 1
+    '-'     shift, and go to state 2
+    '('     shift, and go to state 3
+
+    factor  go to state 19
+
+
+State 15
+
+    8 factor: '(' expression ')' .
+
+    $default  reduce using rule 8 (factor)
+
+
+State 16
+
+    2 expression: expression '+' term .
+    5 term: term . '*' factor
+    6     | term . '/' factor
+
+    '*'  shift, and go to state 13
+    '/'  shift, and go to state 14
+
+    $default  reduce using rule 2 (expression)
+
+
+State 17
+
+    3 expression: expression '-' term .
+    5 term: term . '*' factor
+    6     | term . '/' factor
+
+    '*'  shift, and go to state 13
+    '/'  shift, and go to state 14
+
+    $default  reduce using rule 3 (expression)
+
+
+State 18
+
+    5 term: term '*' factor .
+
+    $default  reduce using rule 5 (term)
+
+
+State 19
+
+    6 term: term '/' factor .
+
+    $default  reduce using rule 6 (term)

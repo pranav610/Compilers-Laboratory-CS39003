@@ -1,0 +1,185 @@
+==============================================================================
+Generated Quads for the program
+  0. :param	_0
+  1. :t000	=	call printStr, 1
+  2. :t001	=	& a
+  3. :param	t001
+  4. :t002	=	call readInt, 1
+  5. :t003	=	& b
+  6. :param	t003
+  7. :t004	=	call readInt, 1
+  8. :t005	=	& c
+  9. :param	t005
+ 10. :t006	=	call readInt, 1
+ 11. :t007	=	& d
+ 12. :param	t007
+ 13. :t008	=	call readInt, 1
+ 14. :param	a
+ 15. :param	b
+ 16. :param	c
+ 17. :param	d
+ 18. :t009	=	call get_random, 4
+ 19. :e	=	t009
+ 20. :t010	=	t009
+ 21. :param	_1
+ 22. :t011	=	call printStr, 1
+ 23. :param	e
+ 24. :t012	=	call printInt, 1
+ 25. :param	_2
+ 26. :t013	=	call printStr, 1
+ 27. :t014	=	0
+ 28. :return	t014
+ 29. :t015	=	0
+ 30. :i	=	t015
+ 31. :t016	=	0
+ 32. :j	=	t016
+ 33. :param	a
+ 34. :param	b
+ 35. :param	c
+ 36. :t017	=	call bar, 3
+ 37. :k	=	t017
+ 38. :t018	=	t017
+ 39. :t019	=	i + j
+ 40. :t020	=	t019 + k
+ 41. :l	=	t020
+ 42. :t021	=	t020
+ 43. :return	l
+ 44. :param	a
+ 45. :param	b
+ 46. :param	c
+ 47. :t022	=	call foo, 3
+ 48. :i	=	t022
+ 49. :t023	=	t022
+ 50. :t024	=	a + b
+ 51. :t025	=	i * t024
+ 52. :return	t025
+ 53. :param	a
+ 54. :param	b
+ 55. :t026	=	call func, 2
+ 56. :j	=	t026
+ 57. :t027	=	t026
+ 58. :t028	=	j + b
+ 59. :return	t028
+ 60. :t029	=	a + b
+ 61. :l	=	t029
+ 62. :t030	=	t029
+ 63. :return	l
+==============================================================================
+Symbol table Maintained For the Given Program
+++++++++++++++++++++++++++++++++++++++++ Global ++++++++++++++++++++++++++++++++++++++++
+Offset = 0
+Start Quad Index = 0
+End Quad Index =  0
+Name	Value	var_type	size	Offset	Type
+
+printInt	null	func		0	-1	ptr-to-St( Global )Int
+readInt	null	func		0	-1	ptr-to-St( Global )Int
+printStr	null	func		0	-1	ptr-to-St( Global )Int
+func	null	func		0	-1	ptr-to-St( func )Int
+foo	null	func		0	-1	ptr-to-St( foo )Int
+bar	null	func		0	-1	ptr-to-St( bar )Int
+get_random	null	func		0	-1	ptr-to-St( get_random )Int
+main	null	func		0	-1	ptr-to-St( main )Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+=============================================================================
+++++++++++++++++++++++++++++++++++++++++ func ++++++++++++++++++++++++++++++++++++++++
+Offset = -20
+Start Quad Index = 60
+End Quad Index =  63
+Name	Value	var_type	size	Offset	Type
+
+retVal	null	return		4	0	Int
+a	null	param		4	-8	Int
+b	null	param		4	-4	Int
+l	null	local		4	-12	Int
+t029	null	temp		4	-16	Int
+t030	null	temp		4	-20	Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++ foo ++++++++++++++++++++++++++++++++++++++++
+Offset = -28
+Start Quad Index = 53
+End Quad Index =  59
+Name	Value	var_type	size	Offset	Type
+
+retVal	null	return		4	0	Int
+a	null	param		4	-12	Int
+b	null	param		4	-8	Int
+c	null	param		4	-4	Int
+j	null	local		4	-16	Int
+t026	null	temp		4	-20	Int
+t027	null	temp		4	-24	Int
+t028	null	temp		4	-28	Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++ bar ++++++++++++++++++++++++++++++++++++++++
+Offset = -32
+Start Quad Index = 44
+End Quad Index =  52
+Name	Value	var_type	size	Offset	Type
+
+retVal	null	return		4	0	Int
+a	null	param		4	-12	Int
+b	null	param		4	-8	Int
+c	null	param		4	-4	Int
+i	null	local		4	-16	Int
+t022	null	temp		4	-20	Int
+t023	null	temp		4	-24	Int
+t024	null	temp		4	-28	Int
+t025	null	temp		4	-32	Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++ get_random ++++++++++++++++++++++++++++++++++++++++
+Offset = -60
+Start Quad Index = 29
+End Quad Index =  43
+Name	Value	var_type	size	Offset	Type
+
+retVal	null	return		4	0	Int
+a	null	param		4	-16	Int
+b	null	param		4	-12	Int
+c	null	param		4	-8	Int
+d	null	param		4	-4	Int
+i	0	local		4	-20	Int
+t015	0	temp		4	-24	Int
+j	0	local		4	-28	Int
+t016	0	temp		4	-32	Int
+k	null	local		4	-36	Int
+l	null	local		4	-40	Int
+t017	null	temp		4	-44	Int
+t018	null	temp		4	-48	Int
+t019	null	temp		4	-52	Int
+t020	null	temp		4	-56	Int
+t021	null	temp		4	-60	Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++ main ++++++++++++++++++++++++++++++++++++++++
+Offset = -96
+Start Quad Index = 0
+End Quad Index =  28
+Name	Value	var_type	size	Offset	Type
+
+retVal	null	return		4	0	Int
+a	null	local		4	-4	Int
+b	null	local		4	-8	Int
+c	null	local		4	-12	Int
+d	null	local		4	-16	Int
+e	null	local		4	-20	Int
+t000	null	temp		4	-24	Int
+t001	null	temp		8	-32	ptr(Int)
+t002	null	temp		4	-36	Int
+t003	null	temp		8	-44	ptr(Int)
+t004	null	temp		4	-48	Int
+t005	null	temp		8	-56	ptr(Int)
+t006	null	temp		4	-60	Int
+t007	null	temp		8	-68	ptr(Int)
+t008	null	temp		4	-72	Int
+t009	null	temp		4	-76	Int
+t010	null	temp		4	-80	Int
+t011	null	temp		4	-84	Int
+t012	null	temp		4	-88	Int
+t013	null	temp		4	-92	Int
+t014	0	temp		4	-96	Int
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

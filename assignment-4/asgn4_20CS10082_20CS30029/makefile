@@ -1,5 +1,5 @@
-ass3_20CS10082_20CS30029_output.txt: a.out asgn4_20CS10082_20CS30029_test.c
-	./a.out < asgn4_20CS10082_20CS30029_test.c > asgn4_20CS10082_20CS30029_output.txt
+ass3_20CS10082_20CS30029_output.txt: a.out asgn4_20CS30034_20CS30054_test.c
+	./a.out < asgn4_20CS30034_20CS30054_test.c > asgn4_20CS10082_20CS30029_output.txt
 
 a.out: asgn4_20CS10082_20CS30029_main.o lex.yy.o y.tab.o
 	g++ lex.yy.o y.tab.o asgn4_20CS10082_20CS30029_main.o -ll
